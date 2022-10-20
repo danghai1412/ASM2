@@ -6,12 +6,11 @@ var logger = require('morgan')
 
 var indexRouter = require('./routes/index')
 var studentRouter = require('./routes/student')
-var lecturerRouter = require('./routes/lecturer')
-var apiRouter = require('./routes/api')
+var legoRouter = require('./routes/lego')
 
 var mongoose = require('mongoose')
 var url =
-    'mongodb+srv://longndt:xdHB48B3Fv*%40TPa@cluster0.i5kings.mongodb.net/cloud'
+    'mongodb://localhost:27017/cloud'
 
 mongoose.connect(url, { useNewUrlParser: true }, err => {
     if (!err) {
@@ -50,8 +49,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/', indexRouter)
 app.use('/student', studentRouter)
-app.use('/lecturer', lecturerRouter)
-app.use('/api', apiRouter)
+app.use('/lego', legoRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
