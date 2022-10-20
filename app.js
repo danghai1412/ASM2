@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser')
 var logger = require('morgan')
 
 var indexRouter = require('./routes/index')
-var studentRouter = require('./routes/student')
+var robotRouter = require('./routes/robot')
 var legoRouter = require('./routes/lego')
 
 var mongoose = require('mongoose')
@@ -48,7 +48,7 @@ app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/', indexRouter)
-app.use('/student', studentRouter)
+app.use('/robot', robotRouter)
 app.use('/lego', legoRouter)
 
 // catch 404 and forward to error handler

@@ -107,4 +107,13 @@ router.get('/detail/:id', (req, res) => {
         }
     })
 })
+
+router.get('/list', (req, res) => {
+    LegoModel.find((err, data) => {
+        if (!err) {
+            res.render('lego/list', { lego: data, })
+        }
+    })
+})
+
 module.exports = router
