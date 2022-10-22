@@ -8,6 +8,7 @@ var indexRouter = require('./routes/index')
 var robotRouter = require('./routes/robot')
 var legoRouter = require('./routes/lego')
 
+
 var mongoose = require('mongoose')
 var url =
     'mongodb+srv://danghai1412:hai14122002@cluster0.b95irw9.mongodb.net/cloud'
